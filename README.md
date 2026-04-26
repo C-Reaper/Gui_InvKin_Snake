@@ -1,193 +1,72 @@
-# Gui_InvKin_Snake
+# Project README
 
+## Overview
+This project is an implementation of an Inverse Kinematics Snake using a C-based GUI library. It features dynamic rendering of snake segments based on user input and includes support for different build environments (Linux, Windows, Wine, and WebAssembly).
 
-## Project Overview
+## Features
+- **Dynamic Rendering**: Segments of the snake are dynamically rendered based on user input.
+- **Two Modes**: Supports static and dynamic updates to the snake's movement.
+- **Cross-Platform Build**: Can be compiled and executed on Linux, Windows, and WebAssembly.
 
-This project implements specialized functionality related to invkin_snake.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for invkin_snake
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
+## Project Structure
+```
+# Project Organization:
+Gui_InvKin_Snake/
+├── build/              # .exe files produced by Main.c
+├── libs/               # *.c for bin
+├── lib/                # librarys for my own languages
+├── code/               # scripts from my custom languages for example .rex, .ll, .omml
+├── data/               # Datafile for example .txt or dumped files
+├── assets/             # images and sound files
+├── src/                # src code
+│   ├── Main.c          # Entry point
+│   └── *.h             # stand alone Header-based C-files, without *.c files that implement it
+├── Makefile.linux      # Linux Build configuration
+├── Makefile.windows    # Windows Build configuration
+├── Makefile.wine       # Wine Build configuration
+└── README.md           # This file
+└── LICENSE             # Project license
+└── .gitignore          # Git ignore rules
+```
 
 ### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
+- C/C++ Compiler and Debugger (GCC, Clang)
 - Make utility
 - Standard development tools
+- Libraries needed in specific projects (example given WINAPI, X11, ALSA)
 
-### Build Steps
+## Build & Run
+To build the project:
 
-1. Navigate to project directory:
-```bash
+```sh
 cd Gui_InvKin_Snake
+make -f Makefile.linux all  # For Linux
+make -f Makefile.windows all  # For Windows
+make -f Makefile.wine all  # For Wine cross-compile for windows
+make -f Makefile.web all  # For Webassembly
 ```
 
-2. Build the project:
-```bash
-make -f Makefile.(os) all
+For clean rebuild:
+
+```sh
+make -f Makefile.linux clean  # For Linux
+make -f Makefile.windows clean  # For Windows
+make -f Makefile.wine clean  # For Wine cross-compile for windows
+make -f Makefile.web clean  # For Webassembly
 ```
 
-3. For clean rebuild:
-```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
+Build Options:
+- `all`: Build output.
+- `do`: Build + exe output.
+- `clean`: Remove build artifacts.
+
+To execute it with make:
+
+```sh
+make -f Makefile.linux exe  # For Linux
+make -f Makefile.windows exe  # For Windows
+make -f Makefile.wine exe  # For Wine cross-compile for windows
+make -f Makefile.web exe  # For Webassembly
 ```
 
-4. If there are ./bin and ./libs directories, build libs with:
-```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
-```
-
-### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
-
-## Running the Project
-
-Execute the compiled binary:
-
-```bash
-./build/Main(.exe)
-```
-
-Or using make:
-```bash
-make -f Makefile.(os) exe
-```
-
-## Project Organization
-
-```
-Gui_InvKin_Snake/
-├── src/
-│   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
-└── README.md           # This file
-```
-
-## Technical Details
-
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
-
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
-
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
-
-## Development Notes
-
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
+This README provides a clear and concise overview of the project, its features, structure, prerequisites, and build instructions.
